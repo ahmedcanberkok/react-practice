@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+## README.md
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Proje Başlığı: React Kimlik Doğrulama ve Çalışan Yönetim Sistemi
 
-## Available Scripts
+## İçindekiler
+- [Giriş](#giriş)
+- [Özellikler](#özellikler)
+- [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
+- [Kurulum](#kurulum)
+- [Kullanım](#kullanım)
+- [Dosya Açıklamaları](#dosya-açıklamaları)
+  - [Login.js](#loginjs)
+  - [Success.js](#successjs)
+  - [Documents.js](#documentsjs)
+  - [CurrencyTable.js](#currencytablejs)
 
-In the project directory, you can run:
+## Giriş
+Bu proje, ön yüzü React kullanılarak geliştirilmiş bir web uygulamasıdır. Kullanıcı kimlik doğrulama (giriş ve kayıt) işlevleri sağlar ve çalışan verilerinin eklenmesi, güncellenmesi ve silinmesi dahil olmak üzere çalışan yönetimi özelliklerini içerir. Ayrıca belge yönetimi ve döviz kurları görüntüleme özellikleri de mevcuttur.
 
-### `npm start`
+## Özellikler
+- Kullanıcı kimlik doğrulama (giriş ve kayıt)
+- Token ve kullanıcı bilgilerinin güvenli saklanması
+- Çalışan yönetimi: Çalışan ekleme, güncelleme, silme ve görüntüleme
+- Belge yönetimi: Belge yükleme, indirme ve silme
+- Gerçek zamanlı döviz kurları görüntüleme
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Kullanılan Teknolojiler
+- React
+- React Router
+- Axios
+- React Toastify
+- React Secure Storage
+- JWT Decode
+- Tailwind CSS (stil için)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Kurulum
+1. Depoyu klonlayın:
+   ```bash
+   git clone https://github.com/your-repo/react-employee-management.git
+   cd react-employee-management
+   ```
 
-### `npm test`
+2. Bağımlılıkları yükleyin:
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Uygulamayı çalıştırın:
+   ```bash
+   npm start
+   ```
 
-### `npm run build`
+## Kullanım
+- **Giriş Yap**: Kullanıcı adınızı ve şifrenizi girerek giriş yapabilirsiniz.
+- **Kayıt Ol**: Kullanıcı adı ve şifre girerek yeni bir hesap oluşturabilirsiniz.
+- **Çalışan Yönetimi**: Giriş yaptıktan sonra çalışan kayıtlarını görüntüleyebilir, ekleyebilir, güncelleyebilir ve silebilirsiniz.
+- **Belge Yönetimi**: Belgeleri yükleyebilir, indirebilir ve silebilirsiniz.
+- **Döviz Kurları**: Seçilen para birimlerinin güncel döviz kurlarını görüntüleyebilirsiniz.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dosya Açıklamaları
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Login.js
+Kullanıcı giriş ve kayıt işlemlerini yönetir.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Kullanılan Kütüphaneler**:
+  - `React`: Bileşen oluşturmak için.
+  - `useNavigate` from `react-router-dom`: Yönlendirme için.
+  - `axios`: HTTP istekleri yapmak için.
+  - `react-toastify`: Toast bildirimleri göstermek için.
+  - `react-secure-storage`: Tokenları güvenli bir şekilde saklamak için.
+  - `jwt-decode`: JWT tokenlarını çözmek için.
 
-### `npm run eject`
+- **İşlevsellikler**:
+  - `handleSubmit`: Giriş formu gönderimini yönetir.
+  - `handleRegister`: Kayıt formu gönderimini yönetir.
+  - Giriş ve kayıt formlarını görüntüler.
+  - İşlemlerin başarısına veya başarısızlığına göre uygun toast bildirimleri gösterir.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Success.js
+Çalışan verilerinin görüntülenmesi ve yönetilmesini sağlar.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Kullanılan Kütüphaneler**:
+  - `React`: Bileşen oluşturmak için.
+  - `useNavigate` from `react-router-dom`: Yönlendirme için.
+  - `axios`: HTTP istekleri yapmak için.
+  - `react-toastify`: Toast bildirimleri göstermek için.
+  - `react-secure-storage`: Tokenları güvenli bir şekilde saklamak için.
+  - `jwt-decode`: JWT tokenlarını çözmek için.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **İşlevsellikler**:
+  - Çalışan verilerini çeker ve görüntüler.
+  - Çalışan kayıtlarının eklenmesini, güncellenmesini ve silinmesini yönetir.
+  - Çalışan listesi için sayfalama.
+  - İşlemlerin başarısına veya başarısızlığına göre uygun toast bildirimleri gösterir.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Documents.js
+Belgelerin görüntülenmesi ve yönetilmesini sağlar.
 
-## Learn More
+- **Kullanılan Kütüphaneler**:
+  - `React`: Bileşen oluşturmak için.
+  - `useNavigate` from `react-router-dom`: Yönlendirme için.
+  - `axios`: HTTP istekleri yapmak için.
+  - `react-toastify`: Toast bildirimleri göstermek için.
+  - `react-secure-storage`: Tokenları güvenli bir şekilde saklamak için.
+  - `jwt-decode`: JWT tokenlarını çözmek için.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **İşlevsellikler**:
+  - Belgeleri çeker ve görüntüler.
+  - Belgelerin yüklenmesini, indirilmesini ve silinmesini yönetir.
+  - Belge listesi için sayfalama.
+  - İşlemlerin başarısına veya başarısızlığına göre uygun toast bildirimleri gösterir.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### CurrencyTable.js
+Gerçek zamanlı döviz kurlarını görüntüler.
 
-### Code Splitting
+- **Kullanılan Kütüphaneler**:
+  - `React`: Bileşen oluşturmak için.
+  - `useNavigate` from `react-router-dom`: Yönlendirme için.
+  - `axios`: HTTP istekleri yapmak için.
+  - `react-toastify`: Toast bildirimleri göstermek için.
+  - `react-secure-storage`: Tokenları güvenli bir şekilde saklamak için.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **İşlevsellikler**:
+  - Döviz kurlarını çeker ve görüntüler.
+  - Kullanıcının temel para birimini seçmesini sağlar.
+  - İşlemlerin başarısına veya başarısızlığına göre uygun toast bildirimleri gösterir.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Yukarıdaki talimatları izleyerek projeyi yerel makinenize kurabilir ve çalıştırabilirsiniz. Uygulama, çalışanları yönetmek, belgeleri yönetmek ve döviz kurlarını görüntülemek için sezgisel ve kullanıcı dostu bir deneyim sunmak üzere tasarlanmıştır.
