@@ -33,22 +33,6 @@ Bu proje, ön yüzü React kullanılarak geliştirilmiş bir web uygulamasıdır
 - JWT Decode
 - Tailwind CSS (stil için)
 
-## Kurulum
-1. Depoyu klonlayın:
-   ```bash
-   git clone https://github.com/your-repo/react-employee-management.git
-   cd react-employee-management
-   ```
-
-2. Bağımlılıkları yükleyin:
-   ```bash
-   npm install
-   ```
-
-3. Uygulamayı çalıştırın:
-   ```bash
-   npm start
-   ```
 
 ## Kullanım
 - **Giriş Yap**: Kullanıcı adınızı ve şifrenizi girerek giriş yapabilirsiniz.
@@ -124,7 +108,8 @@ Gerçek zamanlı döviz kurlarını görüntüler.
   - Döviz kurlarını çeker ve görüntüler.
   - Kullanıcının temel para birimini seçmesini sağlar.
   - İşlemlerin başarısına veya başarısızlığına göre uygun toast bildirimleri gösterir.
+  -Döviz kurları için ExchangeRate-Api kullanıldı.
 
 ---
 
-Yukarıdaki talimatları izleyerek projeyi yerel makinenize kurabilir ve çalıştırabilirsiniz. Uygulama, çalışanları yönetmek, belgeleri yönetmek ve döviz kurlarını görüntülemek için sezgisel ve kullanıcı dostu bir deneyim sunmak üzere tasarlanmıştır.
+Uygulama, çalışanları yönetmek, belgeleri yönetmek ve döviz kurlarını görüntülemek için sezgisel ve kullanıcı dostu bir deneyim sunmak üzere tasarlanmıştır.
